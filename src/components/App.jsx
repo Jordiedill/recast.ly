@@ -4,9 +4,17 @@ import exampleVideoData from "../data/exampleVideoData.js"
 import Search from "./Search.js"
 import VideoListEntry from "./VideoListEntry.js"
 
-
-var App = () => (
-  <div>
+Class App extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    videos: window.exampleVideoData,
+    currentVideo: window.exampleVideoData[0];
+  }
+}
+render() {
+  return (
+    <div>
     <nav className="navbar">
       <div className="col-md-6 offset-md-3">
         {/* <div><h5><em>search</em> view goes here</h5></div> */}
@@ -24,6 +32,9 @@ var App = () => (
       </div>
     </div>
   </div>
+  )
+}
+
 );
 
 // In the ES6 spec, files are "modules" and do not share a top-level scope
